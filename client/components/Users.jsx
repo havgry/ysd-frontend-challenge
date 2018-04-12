@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
-import { fetchUsers } from '../actions'
+import { fetchUsers } from '../actions/users'
 
 class UserList extends Component {
   componentDidMount() {
@@ -17,7 +18,11 @@ class UserList extends Component {
       <div>
         <h1>List of all users</h1>
         { users.data &&
-          users.data.map(user => <div key={user.id}>{user.name}</div>)
+          users.data.map(user => (
+            <div key={user.id}>
+              <Link to={`/user/${user.id}`}>{user.name}</Link>
+            </div>
+          ))
         }
       </div>
     )

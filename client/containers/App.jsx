@@ -13,15 +13,27 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route path="/" exact render={props => <Users {...this.props} {...props} />} />
-          <Route path="/user/:userId" render={() => <User />} />
+          <Route path="/user/:userId" render={props => <User {...this.props} {...props} />} />
         </Switch>
       </BrowserRouter>
     )
   }
 }
 
-const mapStateToProps = state => ({
-  users: state.users,
-})
+// Map store
+const mapStateToProps = ({ selectedUser, userById, users }) => {
+  // Get user and default to empty user object
+  const { user } = userById[selectedUser] || {
+    user: {
+      data: {},
+    },
+  }
+
+  return {
+    selectedUser,
+    user,
+    users,
+  }
+}
 
 export default connect(mapStateToProps)(App)

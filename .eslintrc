@@ -2,7 +2,11 @@
   "extends": ["airbnb"],
   "plugins": ["standard", "import", "html"],
   "rules": {
-    "semi": [2, "never"]
+    "semi": [2, "never"],
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ]
+    }]
   },
   "env": {
     "browser": true
