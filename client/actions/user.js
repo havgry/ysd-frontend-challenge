@@ -16,7 +16,7 @@ export const receiveUser = (userId, user) => ({
   user,
 })
 
-const queryUser = userId => (dispatch) => {
+const fetchUser = userId => (dispatch) => {
   dispatch(requestUser(userId))
 
   return fetch(`${apiBaseUrl}user/${userId}`)
@@ -26,4 +26,21 @@ const queryUser = userId => (dispatch) => {
     })
 }
 
-export const fetchUser = userId => dispatch => dispatch(queryUser(userId))
+const shouldfetchUser = ({ userById }, userId) => {
+  // Don't fetch user if it already exists or being fetched
+  const user = userById[userId]
+
+  if (user || (user && user.isLoading)) {
+    return false
+  }
+
+  return true
+}
+
+export const fetchUserIfNeeded = userId => (dispatch, getState) => {
+  if (shouldfetchUser(getState(), userId)) {
+    return dispatch(fetchUser(userId))
+  }
+
+  return false
+}

@@ -9,7 +9,7 @@ export const receiveUsers = users => ({
   users,
 })
 
-const queryUsers = () => (dispatch) => {
+const fetchUsers = () => (dispatch) => {
   dispatch(requestUsers())
 
   return fetch(`${apiBaseUrl}users`)
@@ -19,4 +19,19 @@ const queryUsers = () => (dispatch) => {
     })
 }
 
-export const fetchUsers = () => dispatch => dispatch(queryUsers())
+const shouldfetchUsers = ({ users }) => {
+  // Don't fetch users if we already have some or they're being fetched
+  if (users.data.length > 0 || users.isLoading) {
+    return false
+  }
+
+  return true
+}
+
+export const fetchUsersIfNeeded = () => (dispatch, getState) => {
+  if (shouldfetchUsers(getState())) {
+    return dispatch(fetchUsers())
+  }
+
+  return false
+}

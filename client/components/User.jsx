@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import { fetchUser, selectUser } from '../actions/user'
+import { fetchUserIfNeeded, selectUser } from '../actions/user'
 
 class User extends Component {
   componentDidMount() {
@@ -11,13 +11,13 @@ class User extends Component {
     const { userId } = this.props.match.params
 
     this.props.dispatch(selectUser(userId))
-    dispatch(fetchUser(userId))
+    dispatch(fetchUserIfNeeded(userId))
   }
 
   // eslint-disable-next-line react/prop-types
   componentWillReceiveProps({ dispatch, selectedUser }) {
     if (selectedUser !== this.props.selectedUser) {
-      dispatch(fetchUser(selectedUser))
+      dispatch(fetchUserIfNeeded(selectedUser))
     }
   }
 

@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import { fetchUsers } from '../actions/users'
+import { fetchUsersIfNeeded } from '../actions/users'
 
 class UserList extends Component {
   componentDidMount() {
     // Load all users on mount
     // eslint-disable-next-line react/prop-types
     const { dispatch } = this.props
-    dispatch(fetchUsers())
+    dispatch(fetchUsersIfNeeded())
   }
 
   render() {
