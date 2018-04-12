@@ -1,6 +1,6 @@
 import { SELECT_USER, REQUEST_USER, RECEIVE_USER } from '../actions'
 
-export const selectedUser = (state = {}, action) => {
+export const selectedUser = (state = null, action) => {
   switch (action.type) {
     case SELECT_USER:
       return action.userId

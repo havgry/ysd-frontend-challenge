@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 import { fetchUsersIfNeeded } from '../actions/users'
 
 class UserList extends Component {
   componentDidMount() {
     // Load all users on mount
-    // eslint-disable-next-line react/prop-types
     const { dispatch } = this.props
     dispatch(fetchUsersIfNeeded())
   }
 
   render() {
-    // eslint-disable-next-line react/prop-types
     const { users } = this.props
     return (
       <div>
@@ -28,6 +27,14 @@ class UserList extends Component {
       </div>
     )
   }
+}
+
+UserList.propTypes = {
+  users: PropTypes.shape({
+    data: PropTypes.arrayOf(PropTypes.object).isRequired,
+    isLoading: PropTypes.bool.isRequired,
+  }).isRequired,
+  dispatch: PropTypes.func.isRequired,
 }
 
 export default UserList
