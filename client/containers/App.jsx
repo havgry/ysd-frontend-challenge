@@ -25,6 +25,7 @@ const mapStateToProps = ({ selectedUser, userById, users }) => {
   // Get user and default to empty user object
   const { user } = userById[selectedUser] || {
     user: {
+      isLoading: true,
       data: {},
     },
   }

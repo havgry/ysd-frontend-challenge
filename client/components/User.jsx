@@ -29,6 +29,7 @@ class User extends Component {
       <div>
         <h1>User details</h1>
         <Link to="/">Back to all users</Link>
+        {user && user.isLoading ? 'Loading...' : null}
         {user &&
           user.data.name
         }

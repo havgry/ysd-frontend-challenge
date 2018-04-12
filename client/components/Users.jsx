@@ -17,6 +17,7 @@ class UserList extends Component {
     return (
       <div>
         <h1>List of all users</h1>
+        {users.isLoading ? 'Loading...' : null}
         { users.data &&
           users.data.map(user => (
             <div key={user.id}>
