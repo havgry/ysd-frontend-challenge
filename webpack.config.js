@@ -13,6 +13,7 @@ module.exports = {
   output: {
     path: path.resolve('dist'),
     filename: 'index_bundle.js',
+    publicPath: '/',
   },
   module: {
     loaders: [
@@ -32,6 +33,9 @@ module.exports = {
     HtmlWebpackPluginConfig,
     new WebpackNotifierPlugin(),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
