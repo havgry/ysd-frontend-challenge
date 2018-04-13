@@ -7,7 +7,7 @@
     "frontend": "webpack-dev-server",
     "backend": "node backend.js"
   },
-  "author": "",
+  "author": "Magnus Havgry",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",

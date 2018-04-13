@@ -9,7 +9,7 @@ We have provided you with a simple backend and a boilerplate React app, that sho
 - company
 
 ## Using the API
-The API runs on a simple express backend, and runs on localhost port 3000, and has two endpoints
+The API runs on a simple express backend, and runs on localhost port 1337, and has two endpoints
 
 * `/api/users`
  Returns a JSON collection with 10 users
