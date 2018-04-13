@@ -1,0 +1,17 @@
+// Visibility utils
+
+.display--hidden {
+  display: none !important;
+}
+
+.display-desktop--block {
+  @media screen and (min-width: $breakpoint-desktop-min) {
+    display: block !important;
+  }
+}
+
+.display-desktop--hidden {
+  @media screen and (min-width: $breakpoint-desktop-min) {
+    display: none !important;
+  }
+}

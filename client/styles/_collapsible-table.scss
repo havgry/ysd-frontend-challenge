@@ -1,0 +1,59 @@
+.collapsible-table__row {
+  @media screen and (min-width: $breakpoint-desktop-min) {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #ddd;
+    &:nth-child(odd):not(.collapsible-table__header) {
+      background-color: #fafafa;
+    }
+  }
+}
+
+.collapsible-table__header {
+  border-bottom-width: 2px;
+}
+
+.collapsible-table__cell {
+  width: 100%;
+  word-wrap: break-word;
+  word-break: break-word;
+  @media screen and (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
+    display: flex;
+  }
+  @media screen and (min-width: $breakpoint-desktop-min) {
+    padding: .5rem;
+  }
+  @media screen and (max-width: $breakpoint-mobile-max) {
+    padding: 0.25rem 0;
+  }
+}
+
+.collapsible-table__header {
+  font-weight: 700;
+  @media screen and (max-width: $breakpoint-tablet-max) {
+    display: none;
+  }
+}
+
+.collapsible-table__label {
+  font-weight: 700;
+  @media screen and (min-width: $breakpoint-desktop-min) {
+    display: none;
+  }
+  @media screen and (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
+    width: 50%;
+  }
+}
+
+// Card visuals for `collapsible-table`
+.collapsible-table--card {
+  @media screen and (min-width: $breakpoint-desktop-min) {
+    @include card;
+  }
+}
+
+.collapsible-table__row--card {
+  @media screen and (max-width: $breakpoint-tablet-max) {
+    @include card;
+  }
+}

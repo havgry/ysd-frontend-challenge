@@ -1,1 +1,30 @@
-// Styles goes here..
+@import '~normalize.css/normalize.css';
+
+@import 'variables';
+@import 'mixins';
+@import 'type';
+@import 'animations';
+@import 'layout';
+@import 'utils';
+
+@import 'collapsible-table';
+@import 'loading-overlay';
+@import 'definition-list';
+@import 'button';
+@import 'card';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font: normal 1em/1.375 Etica, sans-serif;
+  background-color: $bg-color;
+  color: $pine;
+}

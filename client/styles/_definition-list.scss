@@ -1,0 +1,23 @@
+.definition-list {
+  @media screen and (min-width: $breakpoint-tablet-min) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.definition-list__description-term,
+.definition-list__description-details {
+  width: 50%;
+  margin: 0;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+@media screen and (max-width: $breakpoint-mobile-max) {
+  .definition-list__description-term {
+    margin-top: .25rem;
+  }
+  .definition-list__description-details {
+    margin-bottom: .25rem;
+  }
+}

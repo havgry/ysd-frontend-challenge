@@ -1,0 +1,69 @@
+@font-face {
+  font-family: Etica;
+  src: url('../assets/fonts/lft_etica_reg-webfont.woff2') format('woff2'),
+    url('../assets/fonts/lft_etica_reg-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Etica;
+  src: url('../assets/fonts/lft_etica_semibold-webfont.woff2') format('woff2'),
+    url('../assets/fonts/lft_etica_semibold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Etica;
+  src: url('../assets/fonts/lft_etica_extrabold-webfont.woff2') format('woff2'),
+    url('../assets/fonts/lft_etica_extrabold-webfont.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.title {
+  color: $pine;
+  font-weight: 700;
+}
+
+.title--size-small {
+  font-size: 1.2rem;
+}
+
+.title--size-medium {
+  font-size: 1.4rem;
+}
+
+.title--size-large {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.link {
+  color: $lime;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: darken($lime, 2.5%);
+  }
+}
+
+.text-weight--normal {
+  font-weight: 400 !important;
+}
+
+.text-weight--semibold {
+  font-weight: 700 !important;
+}
+
+.text-weight--bold {
+  font-weight: 900 !important;
+}
+
+.text-style--normal {
+  font-style: normal !important;
+}

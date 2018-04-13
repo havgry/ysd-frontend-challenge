@@ -27,6 +27,10 @@ module.exports = {
         loaders: ['style-loader', 'css-loader', 'sass-loader'],
         exclude: /node_modules/,
       },
+      {
+        test: /\.(png|woff|woff2|svg)$/,
+        loader: 'url-loader?limit=100000',
+      },
     ],
   },
   plugins: [
