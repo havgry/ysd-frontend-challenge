@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import Header from '../components/Header'
 import User from '../components/User'
 import Users from '../components/Users'
 
@@ -10,12 +11,15 @@ import Users from '../components/Users'
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" exact render={props => <Users {...this.props} {...props} />} />
-          <Route path="/user/:userId" render={props => <User {...this.props} {...props} />} />
-        </Switch>
-      </BrowserRouter>
+      <div>
+        <Header />
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" exact render={props => <Users {...this.props} {...props} />} />
+            <Route path="/user/:userId" render={props => <User {...this.props} {...props} />} />
+          </Switch>
+        </BrowserRouter>
+      </div>
     )
   }
 }
