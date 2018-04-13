@@ -1,4 +1,5 @@
 .definition-list {
+  margin: 0;
   @media screen and (min-width: $breakpoint-tablet-min) {
     display: flex;
     flex-wrap: wrap;
