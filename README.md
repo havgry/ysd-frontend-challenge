@@ -1,3 +1,12 @@
+# My approach to solving the challenge
+Even though keeping state in a parent component would suffice in this case, I chose to use Redux and set up routing because it creates a solid foundation to build upon. Since the backend was painfully slow (during development I reduced the time in `randomWait` to keep me from going insane), I also added a very rudimentary caching mechanism in the frontend, so the same data isn't being fetched more than once.
+
+Once the core of the application was working (routing for the two pages, fetching, storing and displaying data), I focused on creating a "responsive table", which I have to admit wasn't that straightforward. A good ol' table is not easily collapsed in a semantically meaningful or responsive way, so I ended up using flexbox and collapsing the columns into something not very table-like. While simple, I think it works but depending on the use case it could very well be, that a regular table with horizontal overflow and perhaps the first column fixed would be a better solution (depending on the amount of data).
+
+I used the same webfont and base colors as Yousee.dk and generally used that as an inspiration (especially in terms of the cards).
+
+I would have liked to spend more time on refining each CSS component (and utilizing SCSS better) and building a CSS foundation - not being able to use a responsive grid framework really limited my time spent on the layout and working with the user data.
+
 # Coding Challenge
 We want you to create a simple app that lists some users in a table, and click each user to display some additional information about that given user. How much additional information you want to display for a given user, is up to you.
 We have provided you with a simple backend and a boilerplate React app, that should contain everything for you to get started. The list must contain the:
